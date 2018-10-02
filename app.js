@@ -27,7 +27,6 @@ let playerO = [];
 
 //checks if Player X won
 function checkPlayerX(possibleWinningSet) {
-    //return possibleWinningSet.every(i => playerX.includes(i))
     return possibleWinningSet.every(function(i){
         if (playerX.includes(i)) {
             return true;
@@ -62,19 +61,13 @@ function cellClicked(e) {
     } 
     // check Player X win, Player O win, Draw
     if (winCombosArray.some(checkPlayerX)) {
-        result.textContent = "Player X wins!";
-        //isGameOver = true;
-        //gameOver();   
+        result.textContent = "Player X wins!"; 
         ++counter;   
     } else if (winCombosArray.some(checkPlayerO)) {
         result.textContent = "Player O wins!";
-        //isGameOver = true;
-        //gameOver();
         ++counter;
     } else if (turnCounter === 9) {
         result.textContent = "It's a draw!";
-        //isGameOver = true;
-        //gameOver();
         ++counter;
     }
 }
